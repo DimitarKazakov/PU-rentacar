@@ -78,6 +78,10 @@ public class OfferService {
         finalPrice += (diffDays - weekendDays) * data.getCar().getPricePerDay();
         finalPrice += weekendDays * data.getCar().getPricePerDay() * 1.1;
 
+        if (data.getClient().getHasIncidents()) {
+            finalPrice += 200;
+        }
+        
         return finalPrice;
     }
 
